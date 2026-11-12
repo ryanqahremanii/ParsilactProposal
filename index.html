@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>پروپوزال صادرات پارسی‌لاکت | کاسپین تجارت</title>
+<style>
+:root{
+  --navy:#1F3B57; --teal:#0E6B5C; --teal-light:#E3F0ED; --bg:#F6F9F8;
+  --text:#2b2f33; --muted:#5f6b73; --white:#ffffff; --border:#dfe7e5;
+  --radius:14px; --shadow:0 6px 24px rgba(31,59,87,.08);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Tahoma,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.9;font-size:15px}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+h1,h2,h3{line-height:1.6}
+.section-title{font-size:1.6rem;color:var(--navy);text-align:center;margin-bottom:8px}
+.section-sub{text-align:center;color:var(--muted);max-width:720px;margin:0 auto 36px}
+.accent-line{width:64px;height:4px;background:var(--teal);border-radius:4px;margin:12px auto 0}
+/* ---------- NAV ---------- */
+nav{position:fixed;top:0;right:0;left:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:12px 20px}
+.logo{font-weight:bold;color:var(--navy);font-size:1.05rem}
+.logo span{color:var(--teal)}
+.nav-links{display:flex;gap:18px;list-style:none}
+.nav-links a{text-decoration:none;color:var(--muted);font-size:.85rem;transition:color .2s;padding:4px 2px;border-bottom:2px solid transparent}
+.nav-links a.active,.nav-links a:hover{color:var(--teal);border-color:var(--teal)}
+.burger{display:none;background:none;border:none;font-size:1.5rem;color:var(--navy);cursor:pointer}
+/* ---------- HERO ---------- */
+.hero{min-height:100vh;display:flex;align-items:center;background:linear-gradient(135deg,var(--navy) 0%,#14304a 55%,var(--teal) 130%);color:#fff;padding:120px 0 70px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 15% 20%,rgba(255,255,255,.08),transparent 40%)}
+.hero .container{position:relative;z-index:1}
+.hero-badge{display:inline-block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);padding:6px 16px;border-radius:30px;font-size:.8rem;margin-bottom:18px}
+.hero h1{font-size:2.2rem;margin-bottom:14px}
+.hero p.lead{max-width:760px;color:#dbe7e4;font-size:1.02rem;margin-bottom:26px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:30px}
+.hero-meta .chip{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:10px;padding:10px 16px;font-size:.82rem}
+.hero-meta .chip b{display:block;color:#fff;font-size:.9rem}
+.btn{display:inline-block;background:var(--teal);color:#fff;text-decoration:none;padding:13px 32px;border-radius:10px;font-weight:bold;transition:.25s;box-shadow:0 8px 20px rgba(14,107,92,.35)}
+.btn:hover{background:#0b5a4d;transform:translateY(-2px)}
+.btn.outline{background:transparent;border:1.5px solid rgba(255,255,255,.5);box-shadow:none;margin-right:10px}
+.btn.outline:hover{background:rgba(255,255,255,.1)}
+/* ---------- SECTIONS ---------- */
+section{padding:80px 0}
+section.alt{background:var(--white)}
+/* phases */
+.phases{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+.phase-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);transition:transform .3s,box-shadow .3s;position:relative;overflow:hidden}
+.phase-card::before{content:'';position:absolute;top:0;right:0;width:100%;height:4px;background:var(--teal);transform:scaleX(0);transform-origin:right;transition:transform .4s}
+.phase-card:hover{transform:translateY(-6px);box-shadow:0 14px 34px rgba(31,59,87,.14)}
+.phase-card:hover::before{transform:scaleX(1)}
+.phase-num{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:12px;background:var(--teal-light);color:var(--teal);font-weight:bold;font-size:1.15rem;margin-bottom:14px}
+.phase-card h3{color:var(--navy);font-size:1.02rem;margin-bottom:10px}
+.phase-card ul{list-style:none}
+.phase-card li{position:relative;padding-right:18px;font-size:.85rem;color:var(--muted);margin-bottom:7px}
+.phase-card li::before{content:'◂';position:absolute;right:0;color:var(--teal)}
+/* tables */
+.table-wrap{overflow-x:auto;border-radius:var(--radius);box-shadow:var(--shadow)}
+table{width:100%;border-collapse:collapse;background:#fff;min-width:640px}
+th{background:var(--navy);color:#fff;padding:14px 16px;font-size:.85rem;text-align:right}
+td{padding:13px 16px;font-size:.85rem;border-bottom:1px solid var(--border);color:var(--text)}
+tr:last-child td{border-bottom:none}
+tr:nth-child(even) td{background:#fafcfb}
+td.cat{font-weight:bold;color:var(--navy);white-space:nowrap}
+/* gantt */
+.gantt{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:26px;overflow-x:auto}
+.gantt-row{display:grid;grid-template-columns:180px repeat(6,1fr);gap:6px;align-items:center;min-width:640px;margin-bottom:10px}
+.gantt-row.head{font-size:.78rem;color:var(--muted);font-weight:bold}
+.gantt-label{font-size:.83rem;color:var(--navy);font-weight:bold}
+.gantt-cell{height:26px;background:#eef3f2;border-radius:6px;position:relative;overflow:hidden}
+.gantt-fill{position:absolute;top:0;bottom:0;right:0;background:linear-gradient(90deg,var(--teal),#14977f);border-radius:6px;width:0;transition:width 1.1s cubic-bezier(.25,.8,.3,1)}
+/* channel layers */
+.layers{display:flex;flex-direction:column;gap:14px}
+.layer{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;display:grid;grid-template-columns:150px 1fr 1fr;gap:16px;align-items:start;box-shadow:var(--shadow)}
+.layer .tag{background:var(--navy);color:#fff;text-align:center;border-radius:10px;padding:12px 8px;font-weight:bold;font-size:.85rem}
+.layer .desc{font-size:.85rem;color:var(--text)}
+.layer .role{font-size:.82rem;color:var(--muted);border-right:3px solid var(--teal);padding-right:12px}
+/* checklist */
+.checklist{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.check-item{background:#fff;border-radius:var(--radius);border:1px solid var(--border);padding:20px;box-shadow:var(--shadow)}
+.check-item h4{color:var(--teal);font-size:.95rem;margin-bottom:6px}
+.check-item p{font-size:.83rem;color:var(--muted)}
+/* deliverables */
+.deliver{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.deliver .item{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-align:center;box-shadow:var(--shadow);transition:transform .3s}
+.deliver .item:hover{transform:translateY(-4px)}
+.deliver .icon{font-size:1.8rem;margin-bottom:8px}
+.deliver p{font-size:.83rem;color:var(--muted)}
+/* framework */
+.framework{background:linear-gradient(135deg,var(--navy),#173b52);color:#fff;border-radius:var(--radius);padding:40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
+.framework .f-item h4{color:#7fd8c8;margin-bottom:8px;font-size:1rem}
+.framework .f-item p{font-size:.83rem;color:#cfe0dd}
+/* footer cta */
+.cta{background:linear-gradient(135deg,var(--teal),#0b5a4d);color:#fff;text-align:center;padding:70px 20px;border-radius:0}
+.cta h2{margin-bottom:12px}
+.cta p{max-width:600px;margin:0 auto 26px;color:#d9efe9}
+footer{background:#12283c;color:#8fa5b5;text-align:center;padding:24px 20px;font-size:.78rem}
+/* reveal */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+/* back to top */
+#toTop{position:fixed;bottom:24px;left:24px;width:46px;height:46px;border-radius:50%;background:var(--teal);color:#fff;border:none;font-size:1.2rem;cursor:pointer;opacity:0;pointer-events:none;transition:.3s;box-shadow:0 6px 18px rgba(14,107,92,.4);z-index:90}
+#toTop.show{opacity:1;pointer-events:auto}
+/* responsive */
+@media(max-width:860px){
+  .nav-links{position:fixed;top:58px;right:0;left:0;background:#fff;flex-direction:column;padding:16px 24px;gap:10px;border-bottom:1px solid var(--border);transform:translateY(-130%);transition:transform .35s;box-shadow:var(--shadow)}
+  .nav-links.open{transform:translateY(0)}
+  .burger{display:block}
+  .hero h1{font-size:1.6rem}
+  .layer{grid-template-columns:1fr}
+  .layer .tag{padding:8px}
+  .framework{padding:28px}
+  section{padding:56px 0}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="logo">کاسپین تجارت <span>|</span> پارسی‌لاکت</div>
+    <button class="burger" id="burger" aria-label="منو">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#intro">معرفی</a></li>
+      <li><a href="#phases">فازهای اجرایی</a></li>
+      <li><a href="#roadmap">نقشه راه بازار</a></li>
+      <li><a href="#channels">کانال‌های جذب</a></li>
+      <li><a href="#timeline">برنامه زمانی</a></li>
+      <li><a href="#client">همکاری</a></li>
+      <li><a href="#deliver">خروجی‌ها</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <div class="hero-badge">پروپوزال راهبردی · نوامبر ۲۰۲۶</div>
+    <h1>راه‌اندازی و توسعه بخش صادرات و بازاریابی بین‌المللی</h1>
+    <p class="lead">طرح اجرایی راه‌اندازی بخش صادرات، توسعه بازارهای منطقه‌ای و معرفی محصولات شرکت فرآورده‌های زیستی پردیس رشد مهرگان (پارسی‌لاکت) در بازارهای هدف — با اجرای کامل روی بستر رسمی و با نام خود شرکت.</p>
+    <div class="hero-meta">
+      <div class="chip">کارفرما<b>پارسی‌لاکت (پردیس رشد مهرگان)</b></div>
+      <div class="chip">مجری و مشاور عملیات صادرات<b>کاسپین تجارت</b></div>
+      <div class="chip">بازارهای هدف<b>عراق · عمان · پاکستان · ازبکستان · قزاقستان · آذربایجان · امارات</b></div>
+    </div>
+    <a href="#intro" class="btn">مطالعه طرح</a>
+    <a href="#deliver" class="btn outline">خروجی‌های قابل تحویل</a>
+  </div>
+</header>
+
+<section id="intro" class="alt">
+  <div class="container">
+    <h2 class="section-title reveal">خلاصه مدیریتی</h2>
+    <div class="accent-line reveal"></div>
+    <p class="section-sub reveal">پارسی‌لاکت با تکیه بر دانش فنی، بومی‌سازی سويه‌های میکروبی اختصاصی و زیرساخت‌های پیشرفته بیوتکنولوژی در شهرک صنعتی شیراز، از پتانسیل بالایی برای تصاحب سهم بازار در کشورهای منطقه برخوردار است. هدف این طرح، راه‌اندازی سیستماتیک بخش صادرات، ایجاد کانال‌های پایدار فروش B2B و هویت‌بخشی بین‌المللی به برند است.</p>
+    <div class="framework reveal">
+      <div class="f-item">
+        <h4>اجرای کامل روی بستر رسمی</h4>
+        <p>کلیه فعالیت‌های بازاریابی، لینکدین، ایمیل‌مارکتینگ و شبکه‌های اجتماعی بر روی حساب‌های رسمی پارسی‌لاکت انجام می‌شود تا بالاترین سطح اعتماد در خریداران خارجی ایجاد گردد.</p>
+      </div>
+      <div class="f-item">
+        <h4>نقش کاسپین تجارت</h4>
+        <p>طراحی نقشه راه ورود به بازار، آماده‌سازی زیرساخت معرفی محصول و مدیریت اجرایی فرآیند صادرات — به‌عنوان مجری و مشاور عملیات صادرات.</p>
+      </div>
+      <div class="f-item">
+        <h4>مالکیت دارایی‌ها</h4>
+        <p>تمامی بازارها، ارتباطات، داده‌ها و دارایی‌های برندی (دیتابیس، محتوا، اکانت‌ها و لندینگ‌پیج‌ها) در انحصار و مالکیت کامل شرکت پارسی‌لاکت باقی می‌ماند.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="phases">
+  <div class="container">
+    <h2 class="section-title reveal">دامنه خدمات: پنج فاز اجرایی</h2>
+    <p class="section-sub reveal">تعهدات اجرایی در قالب پنج فاز عملیاتی طبقه‌بندی شده است.</p>
+    <div class="phases">
+      <div class="phase-card reveal">
+        <div class="phase-num">۱</div>
+        <h3>استراتژی ورود به بازار و انطباق محصولات</h3>
+        <ul>
+          <li>تطبیق سبد محصولات کشاورزی، دام و طیور و آبزی‌پروری با نیاز بازار کشورهای هدف</li>
+          <li>استانداردسازی برچسب‌ها و ادعاها به زبان‌های انگلیسی، عربی و روسی</li>
+          <li>تدوین «دوزیر جهانی صادرات»: TDS، CoA، گواهی GMP و Free Sale</li>
+        </ul>
+      </div>
+      <div class="phase-card reveal">
+        <div class="phase-num">۲</div>
+        <h3>زیرساخت دیجیتال و برندینگ سازمانی</h3>
+        <ul>
+          <li>توسعه بستر رسمی شرکت در لینکدین، وب‌سایت و شبکه‌های اجتماعی</li>
+          <li>سئوی چندزبانه برای جذب لید ارگانیک ورودی (Inbound)</li>
+          <li>کاتالوگ تعاملی و واتس‌اپ بزنس با پاسخگویی خودکار</li>
+        </ul>
+      </div>
+      <div class="phase-card reveal">
+        <div class="phase-num">۳</div>
+        <h3>مستندسازی فنی و اثبات اعتبار</h3>
+        <ul>
+          <li>عکاسی و تصویربرداری صنعتی از خطوط تولید و آزمایشگاه‌ها</li>
+          <li>ویدیوهای علمی با بنیان‌گذاران و متخصصین فنی</li>
+          <li>مستندسازی مزارع پایلوت (Before/After) و کتابچه‌های کاربردی چندزبانه</li>
+        </ul>
+      </div>
+      <div class="phase-card reveal">
+        <div class="phase-num">۴</div>
+        <h3>کمپین‌های محتوایی و جذب مشتری فعال</h3>
+        <ul>
+          <li>تقویم محتوایی فصلی بر اساس تقویم کشاورزی و پرورشی کشورهای مقصد</li>
+          <li>کلدمیل از سرور رسمی @parsilact.com با پیشنهاد نمونه رایگان</li>
+          <li>لندینگ‌پیج چندزبانه با فرم استعلام قیمت (RFQ) و پکیج نمایندگان</li>
+        </ul>
+      </div>
+      <div class="phase-card reveal">
+        <div class="phase-num">۵</div>
+        <h3>مدیریت مذاکرات، لجستیک و نهایی‌سازی</h3>
+        <ul>
+          <li>مذاکره مستقیم با کارخانجات خوراک، خوشه‌های پنبه و مزارع میگو</li>
+          <li>مدیریت ارسال Sample Kits و بازخورد فنی از مقصد</li>
+          <li>مشاوره گمرکی: COSQC/VOC عراق، AQTA آذربایجان و EKTIS</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="roadmap" class="alt">
+  <div class="container">
+    <h2 class="section-title reveal">نقشه راه ورود به بازار</h2>
+    <p class="section-sub reveal">ورود به هر بازار بر اساس تطبیق محصول با نیاز اقلیمی و ساختار خرید آن کشور طراحی شده است؛ کانال اصلی جذب مشتری برای هر سبد محصول متفاوت است.</p>
+    <div class="table-wrap reveal">
+      <table>
+        <thead><tr><th>سبد محصول</th><th>بازارهای اولویت‌دار</th><th>کانال اصلی جذب مشتری</th></tr></thead>
+        <tbody>
+          <tr><td class="cat">کود و محصولات کشاورزی (Remontada)</td><td>ازبکستان، قزاقستان، عراق</td><td>توزیع‌کنندگان نهاده کشاورزی و حضور در نمایشگاه‌های تخصصی (تاشکند، بغداد)</td></tr>
+          <tr><td class="cat">پردبیوتیک دام و طیور (SiloLact، Persizyme-M)</td><td>عراق، پاکستان</td><td>ارتباط مستقیم B2B با کارخانجات خوراک و دامپروری‌های صنعتی؛ لینکدین و ایمیل فنی</td></tr>
+          <tr><td class="cat">آبزی‌پروری (BioPond، PondCleaner)</td><td>عمان، امارات</td><td>مزارع میگوی صنعتی؛ واتس‌اپ بزنس و لندینگ‌پیج عربی</td></tr>
+          <tr><td class="cat">آنزیم صنعتی (Persizyme-M)</td><td>کلیه بازارهای هدف</td><td>فروش فنی B2B به فرمولاتورهای خوراک همراه با تست آزمایشگاهی در سایت خریدار</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="channels">
+  <div class="container">
+    <h2 class="section-title reveal">لایه‌بندی کانال‌های جذب مشتری</h2>
+    <p class="section-sub reveal">جذب مشتری در قالب چهار لایه هم‌پوشان طراحی شده است تا سبد لیدها وابسته به هیچ کانال واحدی نباشد.</p>
+    <div class="layers">
+      <div class="layer reveal">
+        <div class="tag">لایه ۱ · ورودی</div>
+        <div class="desc"><b>Inbound:</b> سئوی چندزبانه، لینکدین رسمی و لندینگ‌پیج فرم استعلام قیمت (RFQ)</div>
+        <div class="role">نقش کاسپین تجارت: راه‌اندازی، بهینه‌سازی و گزارشدهی دوره‌ای لیدهای ورودی</div>
+      </div>
+      <div class="layer reveal">
+        <div class="tag">لایه ۲ · خروجی</div>
+        <div class="desc"><b>Outbound:</b> کمپین کلدمیل از سرور رسمی @parsilact.com با ارسال TDS و پیشنهاد نمونه</div>
+        <div class="role">نقش کاسپین تجارت: ساخت دیتابیس، ارسال، پیگیری و صورت‌جلسه بازخورد</div>
+      </div>
+      <div class="layer reveal">
+        <div class="tag">لایه ۳ · کانال فروش</div>
+        <div class="desc"><b>Channel:</b> شناسایی و واجدشرایط‌سازی توزیع‌کنندگان و نمایندگان محلی در کشورهای مقصد</div>
+        <div class="role">نقش کاسپین تجارت: Shortlist نمایندگان و جلسات اولیه (تصمیم نهایی با پارسی‌لاکت)</div>
+      </div>
+      <div class="layer reveal">
+        <div class="tag">لایه ۴ · رویداد</div>
+        <div class="desc"><b>Event:</b> نمایشگاه‌های تخصصی Agro در تاشکند، مسقط و بغداد</div>
+        <div class="role">نقش کاسپین تجارت: آماده‌سازی پکیج حضور، هماهنگی و پشتیبانی تجاری</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="timeline" class="alt">
+  <div class="container">
+    <h2 class="section-title reveal">برنامه زمانی و فازبندی اجرا</h2>
+    <p class="section-sub reveal">اجرای طرح در یک افق شش‌ماهه برنامه‌ریزی شده و پس از آن با توافق طرفین قابل تمدید و توسعه است.</p>
+    <div class="gantt reveal" id="gantt">
+      <div class="gantt-row head"><div></div><div>ماه ۱</div><div>ماه ۲</div><div>ماه ۳</div><div>ماه ۴</div><div>ماه ۵</div><div>ماه ۶</div></div>
+      <div class="gantt-row"><div class="gantt-label">فاز ۱ · استراتژی و انطباق محصول</div><div class="gantt-cell" data-start="0" data-len="1"></div><div class="gantt-cell"></div><div class="gantt-cell"></div><div class="gantt-cell"></div><div class="gantt-cell"></div><div class="gantt-cell"></div></div>
+      <div class="gantt-row"><div class="gantt-label">فاز ۲ · زیرساخت دیجیتال</div><div class="gantt-cell" data-start="0" data-len="2"></div><div class="gantt-cell"></div><div class="gantt-cell"></div><div class="gantt-cell"></div><div class="gantt-cell"></div><div class="gantt-cell"></div></div>
+      <div class="gantt-row"><div class="gantt-label">فاز ۳ · مستندسازی و اثبات اعتبار</div><div class="gantt-cell"></div><div class="gantt-cell" data-start="1" data-len="2"></div><div class="gantt-cell"></div><div class="gantt-cell"></div><div class="gantt-cell"></div><div class="gantt-cell"></div></div>
+      <div class="gantt-row"><div class="gantt-label">فاز ۴ · کمپین‌ها و جذب مشتری</div><div class="gantt-cell"></div><div class="gantt-cell"></div><div class="gantt-cell" data-start="2" data-len="4"></div><div class="gantt-cell"></div><div class="gantt-cell"></div><div class="gantt-cell"></div></div>
+      <div class="gantt-row"><div class="gantt-label">فاز ۵ · مذاکرات و نهایی‌سازی</div><div class="gantt-cell"></div><div class="gantt-cell"></div><div class="gantt-cell"></div><div class="gantt-cell" data-start="3" data-len="3"></div><div class="gantt-cell"></div><div class="gantt-cell"></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="risk">
+  <div class="container">
+    <h2 class="section-title reveal">مدیریت ریسک و الزامات انطباق</h2>
+    <p class="section-sub reveal">بخش قابل توجهی از ریسک‌های صادرات محصولات زیستی، پیش از حمل و در مرحله رگولاتوری قابل مدیریت است.</p>
+    <div class="phases">
+      <div class="phase-card reveal"><div class="phase-num">✓</div><h3>بازرسی پیش از حمل</h3><ul><li>رعایت الزامات COSQC/VOC برای عراق و سامانه رگولاتوری آذربایجان (AQTA) و سایر مقاصد</li></ul></div>
+      <div class="phase-card reveal"><div class="phase-num">✓</div><h3>انطباق ادعاهای بازاریابی</h3><ul><li>ادبیات تقویتی و اصلاحی در برچسب‌ها و کاتالوگ‌ها؛ جلوگیری از انتقال پرونده محصول به دسته آفت‌کش‌ها/دارویی</li></ul></div>
+      <div class="phase-card reveal"><div class="phase-num">✓</div><h3>تسویه مالی صادراتی</h3><ul><li>طراحی مسیرهای پرداخت ارزی مطمئن و شفاف به‌عنوان پیش‌نیاز هر توافق تجاری، پیش از صدور پیش‌فاکتور</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="client" class="alt">
+  <div class="container">
+    <h2 class="section-title reveal">چارچوب همکاری و نقش پارسی‌لاکت</h2>
+    <p class="section-sub reveal">دوره اولیه اجرای طرح شش ماه است و تمدید آن با ارزیابی نتایج و توافق طرفین انجام می‌شود. برای تسریع اجرا، تصمیم‌گیری در موارد زیر مورد انتظار است:</p>
+    <div class="checklist">
+      <div class="check-item reveal"><h4>خط‌مشی تجاری و قیمت‌گذاری</h4><p>تصویب قیمت‌های تحویل EXW کارخانه شیراز، بازه تخفیفات، حداقل میزان سفارش (MOQ) و نحوه تسویه مالی ارزی.</p></div>
+      <div class="check-item reveal"><h4>تأمین پکیج‌های نمونه صادراتی</h4><p>آماده‌سازی و ارسال Sample Kits همراه با برگه آنالیز (CoA) معتبر برای مزارع پایلوت و خریداران کلیدی.</p></div>
+      <div class="check-item reveal"><h4>تخصیص بودجه اجرایی اولیه</h4><p>ترجمه رسمی اسناد، ثبت‌های احتمالی، تبلیغات هدفمند B2B در لینکدین و عکاسی/تصویربرداری صنعتی.</p></div>
+      <div class="check-item reveal"><h4>رابط فنی و R&D</h4><p>معرفی یک کارشناس ارشد فنی از کارخانه شیراز برای پاسخگویی سریع به استعلامات تخصصی مشتریان خارجی.</p></div>
+      <div class="check-item reveal"><h4>دسترسی به بسترهای رسمی</h4><p>ایجاد دسترسی به وب‌سایت، ایمیل‌های شرکتی و اکانت‌های رسمی جهت اجرای یکپارچه کمپین‌ها بر روی بستر برند.</p></div>
+      <div class="check-item reveal"><h4>مالکیت دارایی‌ها</h4><p>کلیه دارایی‌های تولیدشده — دیتابیس مشتریان، محتواها، اکانت‌ها و ارتباطات تجاری — در مالکیت کامل پارسی‌لاکت باقی می‌ماند.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="deliver">
+  <div class="container">
+    <h2 class="section-title reveal">خروجی‌های قابل تحویل</h2>
+    <p class="section-sub reveal">اجرای این طرح منجر به ایجاد یک «زیرساخت صادراتی فعال و پایدار» بر روی بستر رسمی شرکت خواهد شد.</p>
+    <div class="deliver">
+      <div class="item reveal"><div class="icon">🗺️</div><p>تدوین نقشه راه ورود به بازار برای هر سبد محصول و کشورهای هدف</p></div>
+      <div class="item reveal"><div class="icon">🌐</div><p>راه‌اندازی زیرساخت صادراتی کامل و چندزبانه ظرف هشت هفته ابتدایی</p></div>
+      <div class="item reveal"><div class="icon">📁</div><p>بسته معرفی استاندارد (دوزیر جهانی، برچسب اصلاح‌شده و کاتالوگ) برای کلیه محصولات</p></div>
+      <div class="item reveal"><div class="icon">📬</div><p>راه‌اندازی حداقل چهار کانال فعال دریافت استعلام (Inbound و Outbound)</p></div>
+      <div class="item reveal"><div class="icon">⚡</div><p>پاسخگویی حرفه‌ای و کارشناسی به کلیه استعلام‌های وارده در چارچوب SLA مشخص</p></div>
+      <div class="item reveal"><div class="icon">💱</div><p>ایجاد جریان درآمدی ارزی پایدار از طریق بازارهای منطقه‌ای</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>آماده شروع همکاری</h2>
+  <p>این طرح با تمرکز بر هم‌افزایی میان دانش فنی کارخانه و تخصص بازاریابی بین‌المللی تدوین شده است. اجرای گام‌به‌گام آن، جایگاه پارسی‌لاکت را به‌عنوان یک همرده بین‌المللی معتبر تثبیت خواهد کرد.</p>
+  <a href="#intro" class="btn" style="background:#fff;color:var(--teal)">بازگشت به ابتدای طرح</a>
+</section>
+
+<footer>
+  تهیه‌شده توسط تیم راه‌اندازی و توسعه صادرات · کاسپین تجارت · نوامبر ۲۰۲۶ — این سند محرمانه و متعلق به شرکت فرآورده‌های زیستی پردیس رشد مهرگان (پارسی‌لاکت) است.
+</footer>
+
+<button id="toTop" aria-label="بازگشت به بالا">↑</button>
+
+<script>
+// منوی موبایل
+const burger = document.getElementById('burger');
+const navLinks = document.getElementById('navLinks');
+burger.addEventListener('click', () => navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+// انیمیشن ظاهر شدن بخش‌ها
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: .12 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// هایلایت لینک فعال منو
+const sections = document.querySelectorAll('section[id]');
+const links = document.querySelectorAll('.nav-links a');
+const navObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id));
+    }
+  });
+}, { rootMargin: '-40% 0px -55% 0px' });
+sections.forEach(s => navObserver.observe(s));
+
+// انیمیشن نوارهای گانت
+const gantt = document.getElementById('gantt');
+const ganttObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      gantt.querySelectorAll('.gantt-cell[data-len]').forEach((cell, i) => {
+        const fill = document.createElement('div');
+        fill.className = 'gantt-fill';
+        cell.appendChild(fill);
+        setTimeout(() => { fill.style.width = '100%'; }, i * 180 + 150);
+      });
+      ganttObserver.unobserve(gantt);
+    }
+  });
+}, { threshold: .3 });
+ganttObserver.observe(gantt);
+
+// دکمه بازگشت به بالا
+const toTop = document.getElementById('toTop');
+window.addEventListener('scroll', () => toTop.classList.toggle('show', window.scrollY > 500));
+toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+</script>
+</body>
+</html>
